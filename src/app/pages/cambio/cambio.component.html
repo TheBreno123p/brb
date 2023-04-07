@@ -1,4 +1,4 @@
-<nz-spin [nzSpinning]="loading">
+<!-- <nz-spin [nzSpinning]="loading">
   <div nz-row [nzGutter]="12">
     <div nz-col [nzSpan]="12" *ngFor="let cambio of cambios" style="margin-bottom: 0.5rem;">
       <nz-card class="credit-card" style="text-align: center;">
@@ -24,4 +24,66 @@
     </div>
   </div>
 
+</nz-spin> -->
+
+
+<nz-spin [nzSpinning]="loading">
+  <div nz-row [nzGutter]="12">
+    <div nz-col [nzSpan]="24">
+      <ng-container *ngFor="let cambio of data">
+        <nz-card style="margin-bottom: 1.5rem;">
+          <nz-row nzGutter="16" style="text-align: center;">
+
+            <nz-col nzSpan="8">
+              <span nz-icon nzType="arrow-down" nzTheme="outline" style="color: red"></span>
+            </nz-col>
+            <nz-col nzSpan="8">
+              <span nz-icon nzType="arrow-up" nzTheme="outline" style="color: green"></span>
+            </nz-col>
+            <nz-col nzSpan="8">
+              <span nz-icon nzType="arrow-down" nzTheme="outline" style="color: red"></span>
+            </nz-col>
+
+          </nz-row>
+
+          <nz-row [nzGutter]="16">
+
+            <nz-col nzSpan="8">
+              <nz-statistic [nzValue]="exchangeRate(cambio.organizations[1].value, cambio.currency)"
+                [nzTitle]="cambio.organizations[1].organization" style="text-align: center;">
+              </nz-statistic>
+            </nz-col>
+
+            <nz-col nzSpan="8">
+              <nz-statistic [nzValue]="exchangeRate(cambio.organizations[0].value, cambio.currency)"
+                [nzTitle]="cambio.organizations[0].organization" style="text-align: center;">
+              </nz-statistic>
+            </nz-col>
+
+            <nz-col nzSpan="8">
+              <nz-statistic [nzValue]="exchangeRate(cambio.organizations[2].value, cambio.currency)"
+                [nzTitle]="cambio.organizations[2].organization" style="text-align: center;">
+              </nz-statistic>
+            </nz-col>
+
+          </nz-row>
+
+          <nz-row nzGutter="16">
+            <nz-col nzSpan="8" style="text-align: center">
+
+            </nz-col>
+
+            <nz-col nzSpan="8" style="text-align: center">
+              <button nz-button>Comprar</button>
+            </nz-col>
+
+            <nz-col nzSpan="8" style="text-align: center">
+
+            </nz-col>
+          </nz-row>
+
+        </nz-card>
+      </ng-container>
+    </div>
+  </div>
 </nz-spin>

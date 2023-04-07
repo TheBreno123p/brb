@@ -1,20 +1,23 @@
 <nz-spin [nzSpinning]="loading">
   <div nz-row [nzGutter]="12">
     <div nz-col [nzSpan]="12" *ngFor="let card of cards" style="margin-bottom: 0.5rem;">
-      <nz-card class="credit-card" style="text-align: center;">
+      <nz-card class="credit-card" style="text-align: center;" [ngStyle]="{'background-color': card.color}">
 
         <nz-row [nzGutter]="16" style="padding-bottom: 1rem;">
           <nz-col [nzSpan]="24">
-            {{ card.bank }} / {{ card.bandeira }}
+            <img [src]="card.image" style="height: 50px">
+            <h3 style="color: white">{{ card.bank }} / {{ card.bandeira }}</h3>
           </nz-col>
         </nz-row>
 
         <nz-row [nzGutter]="16" style="margin-bottom: 3rem">
           <nz-col [nzSpan]="12">
-            <nz-statistic [nzValue]="toCurrency(card.limit)" nzTitle="Limite"></nz-statistic>
+            <nz-statistic [nzValue]="toCurrency(card.limit)" nzTitle="Limite"
+              [nzValueStyle]="{'color': 'white'}"></nz-statistic>
           </nz-col>
-          <nz-col [nzSpan]="12">
-            <nz-statistic [nzValue]="toCurrency(card.annuity)" nzTitle="Anuidade"></nz-statistic>
+          <nz-col [nzSpan]=" 12">
+            <nz-statistic [nzValue]="toCurrency(card.annuity)" nzTitle="Anuidade"
+              [nzValueStyle]="{'color': 'white'}"></nz-statistic>
           </nz-col>
         </nz-row>
 
