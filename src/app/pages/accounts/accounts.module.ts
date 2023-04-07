@@ -5,6 +5,10 @@ import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsComponent } from './accounts.component';
 
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,10 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
     CommonModule,
     AccountsRoutingModule,
     NzCarouselModule,
+    NzCardModule,
+    NzSpinModule,
+    NzGridModule,
+    NzStatisticModule
   ]
 })
 export class AccountsModule { }

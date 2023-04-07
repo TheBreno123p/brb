@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PrevidenciaRoutingModule } from './previdencia-routing.module';
 import { PrevidenciaComponent } from './previdencia.component';
+import { EmConstrucaoModule } from '../em-construcao/em-construcao.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PrevidenciaComponent } from './previdencia.component';
   ],
   imports: [
     CommonModule,
-    PrevidenciaRoutingModule
+    PrevidenciaRoutingModule,
+    EmConstrucaoModule
   ]
 })
 export class PrevidenciaModule { }

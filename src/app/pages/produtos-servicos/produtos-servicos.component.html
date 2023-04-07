@@ -1,1 +1,29 @@
-<p>produtos-servicos works!</p>
+<nz-spin [nzSpinning]="loading">
+  <nz-table #basicTable [nzData]="produtos">
+    <thead>
+      <tr>
+        <th>Empresa</th>
+        <th>Tipo</th>
+        <th>Taxa</th>
+        <th>Valor</th>
+        <th>Mínimo</th>
+        <th>Máximo</th>
+        <th>Índice de Correção</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of basicTable.data; index as index">
+        <td>{{ produto.empresa }}</td>
+        <td>{{ produto.tipo_conta }}</td>
+        <td>{{ produto.taxa.name }}</td>
+        <td>{{ currency(produto.taxa.price) }}</td>
+        <td>{{ currency(produto.taxa.minimum) }}</td>
+        <td>{{ currency(produto.taxa.maximum) }}</td>
+        <td>{{ produto.indexer.indexer }}</td>
+        <td>{{ percentage(produto.indexer.rate) }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</nz-spin>

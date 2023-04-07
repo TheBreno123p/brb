@@ -1,1 +1,35 @@
-<p>investimento works!</p>
+<nz-spin [nzSpinning]="loading">
+  <nz-table #basicTable [nzData]="investimentos">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Período</th>
+        <th>Participante</th>
+        <th>Administrador</th>
+        <th>Gestor</th>
+        <th>Taxa de Entrada</th>
+        <th>Taxa de Saída</th>
+        <th>Método</th>
+        <th>Ínidice</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let investimento of basicTable.data; index as index">
+        <td>{{ investimento.name }}</td>
+        <td>{{ investimento.category }}</td>
+        <td>{{ investimento.period }}</td>
+        <td>{{ investimento.participant }}</td>
+        <td>{{ investimento.admin }}</td>
+        <td>{{ investimento.manager }}</td>
+        <td>{{ percentage(investimento.fee.entry) }}</td>
+        <td>{{ percentage(investimento.fee.exit) }}</td>
+        <td>{{ investimento.performance.method }}</td>
+        <td>{{ investimento.performance.benchmark }}</td>
+        <td>{{ percentage(investimento.performance.amount) }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</nz-spin>

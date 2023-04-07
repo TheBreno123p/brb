@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ACCOUNTS } from 'src/app/@core/data/accounts';
 import { Account } from 'src/app/@core/interfaces/accounts-interface';
 
@@ -7,23 +7,28 @@ import { Account } from 'src/app/@core/interfaces/accounts-interface';
   templateUrl: './accounts.component.html',
   styleUrls: ['./accounts.component.scss']
 })
-export class AccountsComponent {
+export class AccountsComponent implements OnInit {
 
   public accounts: Account[] = ACCOUNTS
+
+  public loading: boolean = true
 
   public random = Math.random()
 
   ngOnInit() {
+    setTimeout(() => {
+      this.loading = false
+    }, 1000);
   }
 
-  public balance(value: number): string {
+  public currency(value: number): string {
     return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
   }
 
   public expected(value: number): string {
     value *= this.random + 1
 
-    return this.balance(value)
+    return this.currency(value)
   }
 
   public get totalBalance() {

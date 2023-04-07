@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SegurosRoutingModule } from './seguros-routing.module';
 import { SegurosComponent } from './seguros.component';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { SegurosComponent } from './seguros.component';
   ],
   imports: [
     CommonModule,
-    SegurosRoutingModule
+    SegurosRoutingModule,
+    NzSpinModule,
+    NzTableModule,
   ]
 })
 export class SegurosModule { }

@@ -1,16 +1,25 @@
-<nz-carousel>
-  <div nz-carousel-content [ngStyle]="{'background': account.color}" *ngFor="let account of accounts">
-    <!-- <h1><strong>{{ account.description }}</strong></h1>
+<nz-spin [nzSpinning]="loading">
+  <div nz-row [nzGutter]="12">
+    <div nz-col [nzSpan]="12" *ngFor="let account of accounts" style="margin-bottom: 0.5rem;">
+      <nz-card class="credit-card" style="text-align: center;" [ngStyle]="{'background-color': account.color }">
 
-    <div>
-      <small class="small">BALANCE: </small> <span>{{ balance(account.balance) }}</span>
+        <nz-row [nzGutter]="16" style="padding-bottom: 1rem;">
+          <nz-col [nzSpan]="24">
+            {{ account.description }}
+          </nz-col>
+        </nz-row>
+
+        <nz-row [nzGutter]="16">
+          <nz-col [nzSpan]="12">
+            <nz-statistic [nzValue]="currency(account.balance)" nzTitle="Saldo"></nz-statistic>
+          </nz-col>
+          <nz-col [nzSpan]="12">
+            <nz-statistic [nzValue]="expected(account.balance)" nzTitle="Em 6 meses"></nz-statistic>
+          </nz-col>
+        </nz-row>
+
+      </nz-card>
     </div>
-
-    <div>
-      <small class="small">EXPECTED: </small> <span>{{ expected(account.balance) }}</span>
-    </div> -->
-
-
-
   </div>
-</nz-carousel>
+
+</nz-spin>

@@ -1,1 +1,27 @@
-<p>cambio works!</p>
+<nz-spin [nzSpinning]="loading">
+  <div nz-row [nzGutter]="12">
+    <div nz-col [nzSpan]="12" *ngFor="let cambio of cambios" style="margin-bottom: 0.5rem;">
+      <nz-card class="credit-card" style="text-align: center;">
+
+        <nz-row [nzGutter]="16" style="padding-bottom: 1rem;">
+          <nz-col [nzSpan]="24">
+            <span><strong>{{ cambio.currency }}</strong></span>
+            <br>
+            <small>Atualizado em {{ cambio.updated_at | date: 'dd/MM/yyyy hh:mm:ss' }}</small>
+          </nz-col>
+        </nz-row>
+
+        <nz-row [nzGutter]="16">
+          <nz-col [nzSpan]="12">
+            <nz-statistic [nzValue]="currency(1, cambio.currency)"></nz-statistic>
+          </nz-col>
+          <nz-col [nzSpan]="12">
+            <nz-statistic [nzValue]="exchangeRate(cambio.value)"></nz-statistic>
+          </nz-col>
+        </nz-row>
+
+      </nz-card>
+    </div>
+  </div>
+
+</nz-spin>

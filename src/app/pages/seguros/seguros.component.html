@@ -1,1 +1,25 @@
-<p>seguros works!</p>
+<nz-spin [nzSpinning]="loading">
+  <nz-table #basicTable [nzData]="seguros">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Produto</th>
+        <th>Código</th>
+        <th>Cobertura</th>
+        <th>Mínimo</th>
+        <th>Máximo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let seguro of basicTable.data; index as index">
+        <td>{{ seguro.type }}</td>
+        <td>{{ seguro.produto }}</td>
+        <td>{{ seguro.code | number:'3.0' }}</td>
+        <td>{{ seguro.coverage.type }}</td>
+        <td>{{ currency(seguro.coverage.min) }}</td>
+        <td>{{ currency(seguro.coverage.max) }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</nz-spin>
