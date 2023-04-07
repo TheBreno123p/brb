@@ -1,0 +1,19 @@
+<nz-spin [nzSpinning]="loading">
+  <nz-table #basicTable [nzData]="despesas">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let despesa of basicTable.data; index as index">
+        <td>{{ despesa.date | date: 'dd/MM/yyy hh:mm' }}</td>
+        <td>{{ despesa.description }}</td>
+        <td>{{ currency(despesa.value) }} </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</nz-spin>

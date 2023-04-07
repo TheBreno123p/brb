@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { FaturaComponent } from './fatura/fatura.component';
 
 @Component({
   selector: 'app-cartao-credito',
@@ -14,6 +16,10 @@ export class CartaoCreditoComponent implements OnInit {
     { bank: 'Bradesco', bandeira: 'Visa', limit: Math.random() * 10000, annuity: Math.random() * 100 },
   ]
 
+  constructor(
+    private modalService: NzModalService
+  ) { }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.loading = false
@@ -25,7 +31,9 @@ export class CartaoCreditoComponent implements OnInit {
   }
 
   public open(card: any) {
-    console.log(card)
+    this.modalService.create({
+      nzContent: FaturaComponent
+    })
   }
 
 }
