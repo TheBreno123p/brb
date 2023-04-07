@@ -24,4 +24,8 @@ export class CartaoCreditoComponent implements OnInit {
     return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
   }
 
+  public open(card: any) {
+    console.log(card)
+  }
+
 }

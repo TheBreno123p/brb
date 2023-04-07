@@ -9,12 +9,18 @@
           </nz-col>
         </nz-row>
 
-        <nz-row [nzGutter]="16">
+        <nz-row [nzGutter]="16" style="margin-bottom: 3rem">
           <nz-col [nzSpan]="12">
             <nz-statistic [nzValue]="toCurrency(card.limit)" nzTitle="Limite"></nz-statistic>
           </nz-col>
           <nz-col [nzSpan]="12">
             <nz-statistic [nzValue]="toCurrency(card.annuity)" nzTitle="Anuidade"></nz-statistic>
+          </nz-col>
+        </nz-row>
+
+        <nz-row [nzGutter]="16">
+          <nz-col [nzSpan]="24">
+            <button nz-button (click)="open(card)">Click me</button>
           </nz-col>
         </nz-row>
 

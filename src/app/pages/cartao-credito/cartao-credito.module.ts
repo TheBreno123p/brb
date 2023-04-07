@@ -9,6 +9,7 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 
 const ZorroModules: any[] = [
@@ -17,6 +18,7 @@ const ZorroModules: any[] = [
   NzGridModule,
   NzStatisticModule,
   NzSpinModule,
+  NzButtonModule,
 ]
 
 @NgModule({

@@ -2,21 +2,21 @@
   <nz-row [nzGutter]="16" style="margin-bottom: 1rem;">
     <nz-col [nzSpan]="8">
       <nz-card>
-        <nz-statistic [nzValue]="toCurrency(total.balance)" [nzTitle]="'Total'" nzPrefix="R$"
+        <nz-statistic [nzValue]="toCurrency(total.balance)" [nzTitle]="'Total'"
           [nzValueStyle]="{ color: '#3F8600' }"></nz-statistic>
         <ng-template #prefixTplOne><span nz-icon nzType="arrow-up"></span></ng-template>
       </nz-card>
     </nz-col>
     <nz-col [nzSpan]="8">
       <nz-card>
-        <nz-statistic [nzValue]="toCurrency(income)" [nzTitle]="'Income'" nzPrefix="R$"
+        <nz-statistic [nzValue]="toCurrency(income)" [nzTitle]="'Income'"
           [nzValueStyle]="{ color: '#3F8600' }"></nz-statistic>
         <ng-template #prefixTplOne><span nz-icon nzType="arrow-up"></span></ng-template>
       </nz-card>
     </nz-col>
     <nz-col [nzSpan]="8">
       <nz-card>
-        <nz-statistic [nzValue]="toCurrency(expense)" [nzTitle]="'Expenses'" nzPrefix="R$"
+        <nz-statistic [nzValue]="toCurrency(expense)" [nzTitle]="'Expenses'"
           [nzValueStyle]="{ color: '#CF1322' }"></nz-statistic>
         <ng-template #prefixTplTwo><span nz-icon nzType="arrow-down"></span></ng-template>
       </nz-card>
