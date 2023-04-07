@@ -1,0 +1,42 @@
+<div style="text-align: center;">
+  <nz-radio-group style="margin-bottom: 1rem; text-align: center;">
+    <ng-container *ngFor="let filter of filters">
+      <button nz-button nzSize="small" (click)="onClick(filter)">{{ filter }}</button>
+    </ng-container>
+  </nz-radio-group>
+</div>
+
+<nz-spin [nzSpinning]="loading">
+  <nz-table #basicTable [nzData]="expenses">
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Type</th>
+        <th>Received/Paid</th>
+        <th>Date</th>
+        <th>Account</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of basicTable.data; index as index">
+        <td>{{ value(expense.value) }}</td>
+        <td [ngStyle]="{'color': expense.type == types.EXPENSE ? 'red': 'green'}"><span nz-icon
+            [nzType]="expenseIcon(expense)" nzTheme="outline"></span></td>
+        <td><span nz-icon [nzType]="icon(expense)" nzTheme="outline"></span></td>
+        <td>{{ expense.date | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ expense.account.description }}</td>
+        <td style="text-align: center;">
+          <button nz-button nzSize="small" (click)="onEdit(expense)">
+            <span nz-icon nzType="edit" nzTheme="twotone"></span>
+          </button>
+          <nz-divider nzType="vertical"></nz-divider>
+          <button nz-button nzSize="small" (click)="onDelete(expense)">
+            <span nz-icon nzType="delete" nzTheme="twotone"></span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</nz-spin>

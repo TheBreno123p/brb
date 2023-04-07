@@ -1,0 +1,62 @@
+<nz-spin [nzSpinning]="loading">
+  <nz-row [nzGutter]="16" style="margin-bottom: 1rem;">
+    <nz-col [nzSpan]="8">
+      <nz-card>
+        <nz-statistic [nzValue]="toCurrency(total.balance)" [nzTitle]="'Total'" nzPrefix="R$"
+          [nzValueStyle]="{ color: '#3F8600' }"></nz-statistic>
+        <ng-template #prefixTplOne><span nz-icon nzType="arrow-up"></span></ng-template>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="8">
+      <nz-card>
+        <nz-statistic [nzValue]="toCurrency(income)" [nzTitle]="'Income'" nzPrefix="R$"
+          [nzValueStyle]="{ color: '#3F8600' }"></nz-statistic>
+        <ng-template #prefixTplOne><span nz-icon nzType="arrow-up"></span></ng-template>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="8">
+      <nz-card>
+        <nz-statistic [nzValue]="toCurrency(expense)" [nzTitle]="'Expenses'" nzPrefix="R$"
+          [nzValueStyle]="{ color: '#CF1322' }"></nz-statistic>
+        <ng-template #prefixTplTwo><span nz-icon nzType="arrow-down"></span></ng-template>
+      </nz-card>
+    </nz-col>
+  </nz-row>
+
+  <nz-card style="margin-bottom: 1rem;">
+    <nz-carousel>
+      <div nz-carousel-content [ngStyle]="{'background': account.color}" *ngFor="let account of accounts">
+
+        <nz-row [nzGutter]="2">
+
+          <nz-col [nzSpan]="12">
+            <h1><strong style="color: white">{{ account.description }}</strong></h1>
+          </nz-col>
+
+          <nz-col [nzSpan]="12">
+            <h1 style="color: white"><strong>{{ toCurrency(account.balance) }}</strong></h1>
+          </nz-col>
+
+        </nz-row>
+
+      </div>
+    </nz-carousel>
+  </nz-card>
+
+  <nz-card>
+    <nz-row [nzGutter]="2">
+      <nz-col [nzSpan]="12" style="text-align: center;">
+        <nz-statistic [nzValue]="savingsPercentage" [nzTitle]="'Savings'" nzSuffix="%"
+          [nzValueStyle]="{ color: '#3F8600' }"></nz-statistic>
+      </nz-col>
+      <nz-col [nzSpan]="12" style="text-align: center;">
+        Congratulations!
+        <br>
+        This month your savings are
+        <br>
+        <strong>{{ toCurrency(savings) }}</strong>
+      </nz-col>
+    </nz-row>
+  </nz-card>
+
+</nz-spin>

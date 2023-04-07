@@ -1,0 +1,52 @@
+<form nz-form [formGroup]="form">
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="value">Value</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid value!">
+      <input nz-input formControlName="value" id="value" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="type">Type</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid type!">
+      <input nz-input formControlName="type" id="type" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="currency">Currency</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid currency!">
+      <input nz-input formControlName="currency" id="currency" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="paid">Paid</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid paid!">
+      <input nz-input formControlName="paid" id="paid" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="date">Date</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid date!">
+      <input nz-input formControlName="date" id="date" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="category">Category</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid category!">
+      <input nz-input formControlName="category" id="category" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="14" nzRequired nzFor="account">Account</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="14" nzErrorTip="The input is not a valid account!">
+      <input nz-input formControlName="account" id="account" />
+    </nz-form-control>
+  </nz-form-item>
+
+</form>

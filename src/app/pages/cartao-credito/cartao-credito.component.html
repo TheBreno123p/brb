@@ -1,0 +1,25 @@
+<nz-spin [nzSpinning]="loading">
+  <div nz-row [nzGutter]="12">
+    <div nz-col [nzSpan]="12" *ngFor="let card of cards" style="margin-bottom: 0.5rem;">
+      <nz-card class="credit-card" style="text-align: center;">
+
+        <nz-row [nzGutter]="16" style="padding-bottom: 1rem;">
+          <nz-col [nzSpan]="24">
+            {{ card.bank }} / {{ card.bandeira }}
+          </nz-col>
+        </nz-row>
+
+        <nz-row [nzGutter]="16">
+          <nz-col [nzSpan]="12">
+            <nz-statistic [nzValue]="toCurrency(card.limit)" nzTitle="Limite"></nz-statistic>
+          </nz-col>
+          <nz-col [nzSpan]="12">
+            <nz-statistic [nzValue]="toCurrency(card.annuity)" nzTitle="Anuidade"></nz-statistic>
+          </nz-col>
+        </nz-row>
+
+      </nz-card>
+    </div>
+  </div>
+
+</nz-spin>
